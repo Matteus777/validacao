@@ -1,0 +1,30 @@
+
+
+mat-form-field input {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.modal-edit-container{
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+}
+
+
+form {
+  width: 100%;
+}
+
+.cancel {
+  background-color: grey;
+  border: none;
+}
+
+
+.btns-container {
+  display: flex;
+  justify-content: end;
+  align-content: flex-end;
+}

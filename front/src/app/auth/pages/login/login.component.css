@@ -1,0 +1,35 @@
+.login-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to bottom right, rgb(26, 213, 227),rgb(202, 253, 255));
+}
+
+form{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+input{
+  margin: .4rem;
+}
+
+div {
+  display: flex;
+  background-color: rgb(247, 255, 255);
+  align-items: center;
+  justify-content: center;
+  border: solid rgb(26, 208, 232) 1px;
+  border-radius: 10px;
+  height: 300px;
+  width: 30%;
+}
+#manterLogado{
+  width:15px;
+  height:15px;
+}
+
+

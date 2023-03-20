@@ -1,0 +1,32 @@
+<div class="w-100">
+  <div
+    class="container-fluid d-flex justify-content-end align-items-end mb-3"
+  >
+    <button class="mt-5 mr-5 text-center" (click)="openDialog('')">CADASTRAR</button>
+  </div>
+  <div class="container-fluid">
+    <table class="w-100">
+      <tr class="w-100">
+        <th class="text-center">Código</th>
+        <th class="text-center">Nome</th>
+        <th class="text-center">Documento</th>
+        <th class="text-center">Email</th>
+        <th class="text-center">Telefone</th>
+        <th class="text-center">Pessoa Responsável</th>
+        <th class="text-center">Ações</th>
+      </tr>
+      <tr *ngFor="let client of clientes" class="w-100">
+        <td class="p-1 text-center">{{ client.id }}</td>
+        <td class="p-1 text-center">{{ client.name }}</td>
+        <td class="p-1 text-center">{{ client.document }}</td>
+        <td class="p-1 text-center">{{ client.email }}</td>
+        <td class="p-1 text-center">{{ client.phone }}</td>
+        <td class="p-1 text-center">{{ client.responsiblePerson }}</td>
+        <td class="p-1 d-flex justify-content-center">
+          <button (click)="edit(client)">EDITAR</button>
+          <button class="btn-danger ml-1" (click)="delete(client.id)">EXCLUIR</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

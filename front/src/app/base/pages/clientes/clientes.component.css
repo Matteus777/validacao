@@ -1,0 +1,21 @@
+
+table{
+  background-color: blanchedalmond;
+  border: solid black 1px;
+}
+
+th{
+  background-color:grey;
+
+  color: white;
+}
+tr{
+  border: solid black 1px;
+
+}
+td{
+  background-color: white;
+  color: black;
+  font-weight: 800;
+}
+

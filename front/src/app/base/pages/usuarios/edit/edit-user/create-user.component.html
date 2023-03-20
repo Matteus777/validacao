@@ -1,0 +1,32 @@
+<div class="modal-edit-container">
+  <h2 class="mb-5">
+    {{ data.id ? "Atualizar Usuario" : "Cadastrar Usuario" }}
+  </h2>
+  <div>
+    <form [formGroup]="createUser">
+      <mat-label>Nome</mat-label>
+      <div class="mb-2"><input  appearance="outline" mat-input formControlName="name" type="text" /></div>
+      <mat-label>E-mail</mat-label>
+      <div class="mb-2"><input  appearance="outline" mat-input formControlName="email" type="text" /></div>
+      <mat-label>Senha</mat-label>
+      <div class="mb-2" *ngIf="!data.id"><input mat-input formControlName="password" type="password" /></div>
+      <mat-form-field class="mt-4" appearance="outline">
+        <mat-label>Selecione o Tipo</mat-label>
+        <mat-select formControlName="type">
+          <mat-option [value]="'Admin'">Administrador</mat-option>
+          <mat-option [value]="'Assistente'">Assistente</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <footer mat-dialog-actions class="">
+        <div>
+          <button mat-button class="cancel" mat-dialog-close>Cancelar</button>
+        </div>
+        <div class="ml-2">
+          <button mat-button (click)="sendForm()">
+            {{ data.id ? "Atualizar" : "Cadastrar" }}
+          </button>
+        </div>
+      </footer>
+    </form>
+  </div>
+</div>

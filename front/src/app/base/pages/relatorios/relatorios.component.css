@@ -1,0 +1,32 @@
+table {
+  background-color: blanchedalmond;
+  border: solid black 1px;
+}
+
+th {
+  background-color:grey;
+  color: white;
+}
+
+tr{
+  border: solid black 1px;
+}
+td {
+  background-color: white;
+  color: black;
+  font-weight: 800;
+ 
+}
+
+input {
+  background-color: none;
+  border: none;
+  border-bottom: none;
+  height: auto;
+  width: auto;
+  border-radius: none !important;
+  padding: 5px 0 5px 0;
+}
+#pdfTable>h1{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

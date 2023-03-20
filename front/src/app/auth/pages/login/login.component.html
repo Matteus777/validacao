@@ -1,0 +1,14 @@
+<main class="login-container">
+  <div>
+    <form [formGroup]="loginForm">
+      <span>Email:<input formControlName="email" type="text" /> </span>
+      <span>Senha:<input formControlName="password" type="password" /></span>
+      <button (click)="loginRequest()">Login</button>
+
+      <span class="d-flex w-75 align-items-center">
+        <input type="checkbox" id="manterLogado" name="manterLogado" [(ngModel)]="manterLogado" [ngModelOptions]="{standalone: true}"/>
+        <label class="mb-0" for="manterLogado" >Manter logado</label>
+      </span>
+    </form>
+  </div>
+</main>

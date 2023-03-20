@@ -1,0 +1,16 @@
+.nav-link{
+  color:white !important;
+  font-weight: bolder;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+}
+.navbar-brand{
+  color:whitesmoke !important;
+  font-weight: bolder;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: x-large;
+  text-decoration: underline;
+}
+.nav-link:hover{
+  text-decoration: underline;
+}

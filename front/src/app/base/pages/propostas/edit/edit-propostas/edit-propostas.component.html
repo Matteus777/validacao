@@ -1,0 +1,19 @@
+<div class="modal-edit-container">
+  <h2 class="mb-5">Editar proposta</h2>
+  <div>
+    <form [formGroup]="editProposta">
+      <mat-label>Descrição</mat-label>
+      <div><input mat-input formControlName="description" type="text" /></div>
+      <mat-label>Status</mat-label>
+      <div><input mat-input formControlName="status" type="text" /></div>
+      <footer mat-dialog-actions class="">
+        <div>
+          <button mat-button class="cancel" mat-dialog-close>Cancelar</button>
+        </div>
+        <div class="ml-2">
+          <button mat-button (click)="update()">Atualizar</button>
+        </div>
+      </footer>
+    </form>
+  </div>
+</div>

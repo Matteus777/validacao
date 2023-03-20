@@ -1,0 +1,34 @@
+<div class="w-100">
+  <div
+    class="container-fluid d-flex justify-content-end align-items-center mb-3"
+  >
+    <button *ngIf="perm === 'Admin'" (click)="create()" class="mt-5 mr-5">
+      CADASTRAR
+    </button>
+  </div>
+  <div class="container-fluid">
+    <table class="w-100">
+      <tr class="w-100">
+        <th class="text-center">Código</th>
+        <th class="text-center">Nome</th>
+        <th class="text-center">Descrição</th>
+        <th class="text-center">Data</th>
+        <th class="text-center">Status</th>
+        <th *ngIf="perm === 'Admin'" class="text-center">Ações</th>
+      </tr>
+      <tr *ngFor="let proposta of propostas" class="w-100">
+        <td class="p-1 text-center">{{ proposta?.cliente?.id }}</td>
+        <td class="p-1 text-center">{{ proposta?.cliente?.name }}</td>
+        <td class="p-1 text-center">{{ proposta?.description }}</td>
+        <td class="p-1 text-center">{{ proposta?.createDate | date:'dd/MM/yyyy HH:mm'}}</td>
+        <td class="p-1 text-center">{{ proposta?.status }}</td>
+        <td *ngIf="perm === 'Admin'" class="p-1 d-flex justify-content-center">
+          <button (click)="update(proposta?.id)">EDITAR</button>
+          <button (click)="delete(proposta?.id)" class="btn-danger ml-1">
+            EXCLUIR
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

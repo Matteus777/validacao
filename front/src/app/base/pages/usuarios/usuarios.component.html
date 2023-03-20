@@ -1,0 +1,31 @@
+<div class="w-100">
+  <div
+    class="container-fluid d-flex justify-content-end align-items-center mb-3"
+  >
+    <button (click)="create()" class="mt-5 mr-5">CADASTRAR</button>
+  </div>
+  <div class="container-fluid">
+    <table class="w-100">
+      <tr class="w-100">
+        <th class="text-center">Código</th>
+        <th class="text-center">Nome</th>
+        <th class="text-center">Email</th>
+        <th class="text-center">Tipo</th>
+        <th class="text-center">Ações</th>
+      </tr>
+      <tr *ngFor="let user of users" class="w-100">
+        <td class="p-1 text-center">{{ user?.id }}</td>
+        <td class="p-1 text-center">{{ user?.name }}</td>
+        <td class="p-1 text-center">{{ user?.email }}</td>
+        <td class="p-1 text-center">{{ user?.type }}</td>
+        <td
+          *ngIf="user?.type != 'Admin'"
+          class="p-1 d-flex justify-content-center"
+        >
+          <button (click)="update(user?.id)">EDITAR</button>
+          <button (click)="delete(user?.id)" class="btn-danger ml-1">EXCLUIR</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

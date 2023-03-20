@@ -1,0 +1,32 @@
+<div class="modal-edit-container">
+  <h2 class="mb-5">Cadastrar proposta</h2>
+
+  <div>
+    <form [formGroup]="cadProposta">
+      <mat-form-field appearance="fill">
+        <mat-label>Selecione o Cliente</mat-label>
+        <mat-select formControlName="cliente">
+          <mat-option *ngFor="let cliente of clientes" [value]="cliente.id">
+            {{ cliente.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div>
+        <mat-label>Descrição</mat-label>
+        <input formControlName="description" type="text" />
+      </div>
+      <div>
+        <mat-label>Status</mat-label>
+        <input formControlName="status" type="text" />
+      </div>
+      <footer mat-dialog-actions class="">
+        <div>
+          <button mat-button class="cancel" mat-dialog-close>Cancelar</button>
+        </div>
+        <div class="ml-2">
+          <button mat-button (click)="create()">Cadastrar</button>
+        </div>
+      </footer>
+    </form>
+  </div>
+</div>

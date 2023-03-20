@@ -1,0 +1,32 @@
+<div class="w-100">
+  <div
+    class="container-fluid d-flex justify-content-center align-items-center mb-3  my-5"
+  >
+    <input type="number" [(ngModel)]="clientId" placeholder="Cód. Cliente" />
+    <button class="btn btn-outline-secondary mx-3" (click)="getPropostas()">
+      Buscar
+    </button>
+    <button class="btn btn-primary" (click)="downloadAsPDF()">
+      Extrair PDF
+    </button>
+  </div>
+  <div class="container-fluid" id="pdfTable" #pdfTable>
+    <h1 *ngIf="client" class="text-center">
+      Propostas Cliente - {{ client.id }} {{ client.name }}
+    </h1>
+    <table class="w-100">
+      <tr class="w-100">
+        <th class="text-center">Código</th>
+        <th class="text-center">Nome</th>
+        <th class="text-center">Descrição</th>
+        <th class="text-center">Status</th>
+      </tr>
+      <tr *ngFor="let proposta of propostas" class="w-100">
+        <td class="p-1 text-center">{{ proposta?.cliente?.id }}</td>
+        <td class="p-1 text-center">{{ proposta?.cliente?.name }}</td>
+        <td class="p-1 text-center">{{ proposta?.description }}</td>
+        <td class="p-1 text-center">{{ proposta?.status }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

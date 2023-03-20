@@ -1,0 +1,10 @@
+.main-container {
+  height: 100vh !important;
+  position: absolute;
+  width: 100%;
+  background-image: linear-gradient(to bottom right, rgb(15, 23, 51), rgb(135, 111, 6));
+}
+
+div {
+  border: solid black 0.5px;
+}

@@ -1,0 +1,65 @@
+<div class="w-100">
+  <h1>Cadastro de Clientes</h1>
+  <form [formGroup]="formCliente">
+
+
+    <div>
+      <label for="nome">
+        Nome
+      </label>
+      <input id="nome" type="text" formControlName="name">
+
+    </div>
+
+
+    <div>
+      <label for="documento">
+        Documento
+      </label>
+      <input id="documento" type="text" formControlName="document" mask="CPF_CNPJ">
+    </div>
+
+    <div>
+      <label for="email">
+        Email
+      </label>
+      <input id="email" type="text" formControlName="email">
+    </div>
+
+    <div>
+      <label for="telefone">
+        Telefone
+      </label>
+      <input id="telefone" type="text" formControlName="phone" mask="(00) 00000-0000">
+    </div>
+
+    <div>
+      <label for="Pessoa Responsável">
+        Pessoa Responsável
+      </label>
+      <input id="pessoaresponsável" type="text" formControlName="responsiblePerson">
+    </div>
+
+    <div>
+      <label for="Responsável Interno">
+        Responsável Interno
+      </label>
+     
+    </div>
+    <mat-form-field appearance="outline">
+      <mat-select [(ngModel)]="internalResponsible" name="internalResponsible" [ngModelOptions]="{standalone: true}">
+        <mat-option *ngFor="let user of users" [value]="user.id">
+          {{user.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+
+  </form>
+
+  <div class="w-100 d-flex justify-content-end align-items-center">
+    <button class="btn-danger" (click)="cancel()">Cancelar</button>
+    <button class="ml-2" (click)="save()">Salvar</button>
+  </div>
+</div>

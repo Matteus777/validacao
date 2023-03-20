@@ -1,0 +1,45 @@
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100% !important;
+  font-size: 13px !important;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+}
+
+input{
+  background-color: rgb(232, 229, 229);
+  border: none;
+  border-bottom: solid rgb(54, 54, 54) 1px;
+  height: 35px;
+  width: 100%;
+  border-radius: 5px 5px 0px 0px;
+}
+
+input:focus {
+  outline: rgb(230, 230, 230) double 0.5px;
+}
+
+button {
+  border: none;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(56, 191, 56);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  border: solid rgb(7, 164, 7) 0.5px;
+  transition: all 0.5s;
+}
+
+button:hover{
+  background-color: rgb(6, 137, 6);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+th{
+  padding:8px !important;
+}

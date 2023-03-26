@@ -25,7 +25,6 @@ export class ClienteController {
     return this.clienteService.create(reqUser, createClienteDto);
   }
 
-  @UseGuards(JwtAuthGuard)
   @Get('/clients')
   findAll() {
     return this.clienteService.findAll();
@@ -59,6 +58,7 @@ export class ClienteController {
   @Delete('/client/:id')
   remove(@Param('id') id: string, @Request() req) {
     const reqUser = req.user;
+
     return this.clienteService.remove(reqUser, +id);
   }
 }

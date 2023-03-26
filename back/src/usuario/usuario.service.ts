@@ -10,11 +10,13 @@ import {
 import { AuditService } from 'src/audit/audit.service';
 import { CreateLogDto } from 'src/audit/dto/create-log.dto';
 import { AuthService } from 'src/auth/shared/auth.service';
+import { CreateRecSenhaDto } from './dto/create-rec-senha.dto';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { LoginUserResponseDto } from './dto/login-response.dto';
 import { UpdatePasswordDto } from './dto/update-password.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 import { UsuarioEntity } from './entities/usuario.entity';
+import { RecuperarSenhaRepository } from './recuperar-senha.repository';
 import { UsuarioRepository } from './usuario.repository';
 
 @Injectable()
@@ -22,6 +24,7 @@ export class UsuarioService {
 	constructor(
 		@Inject(UsuarioRepository)
 		private readonly usuarioRepository: UsuarioRepository,
+		private readonly recSenhaRepository:RecuperarSenhaRepository,
 		private readonly auditService: AuditService,
 		private authService: AuthService,
 	) {}
@@ -72,6 +75,10 @@ export class UsuarioService {
 	async login(loginUser: UsuarioEntity): Promise<LoginUserResponseDto> {
 		const accessToken: string = await this.authService.login(loginUser);
 		return { accessToken };
+	}
+
+	async recuperarSenha(body:CreateRecSenhaDto){
+		return await this.recSenhaRepository.create(body);
 	}
 
 	async findAll(): Promise<UsuarioEntity[]> {

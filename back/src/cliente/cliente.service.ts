@@ -51,9 +51,7 @@ export class ClienteService {
 
   async findAll(): Promise<ClienteEntity[]> {
     let result = await this.clienteRepository.findAll();
-    if (result.length === 0) {
-      throw new NotFoundException('Não existem Clientes Cadastrados!');
-    }
+   
     return result;
   }
 

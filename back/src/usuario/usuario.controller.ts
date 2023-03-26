@@ -17,6 +17,7 @@ import { LocalAuthGuard } from 'src/auth/shared/local-auth.guard';
 import { JwtAuthGuard } from 'src/auth/shared/jwt-auth.guard';
 import { FindByEmailDto } from './dto/find-by-email.dto';
 import { UpdatePasswordDto } from './dto/update-password.dto';
+import { CreateRecSenhaDto } from './dto/create-rec-senha.dto';
 
 @Controller()
 export class UsuarioController {
@@ -33,6 +34,11 @@ export class UsuarioController {
 	@Post('/usuario/login')
 	async login(@Request() req: any) {
 		return await this.usuarioService.login(req.user);
+	}
+	@Post('/usuario/recsenha')
+	async recSenha(@Body() req: CreateRecSenhaDto) {
+		let inserted = await this.usuarioService.recuperarSenha(req);
+		return inserted; 
 	}
 
 	@UseGuards(JwtAuthGuard)
